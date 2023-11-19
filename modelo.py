@@ -76,7 +76,7 @@ S, E, I, R = solution.T
 plt.plot(t, S, label='Suscetíveis')
 plt.plot(t, E, label='Expostos')
 plt.plot(t, I, label='Infectados')
-plt.plot(t, R, label='Removidos')
+plt.plot(t, R, label='Recuperados')
 plt.xlabel('Tempo')
 plt.ylabel('Fração da população')
 plt.title('Modelo SEIR da Epidemiologia com Demografia')
