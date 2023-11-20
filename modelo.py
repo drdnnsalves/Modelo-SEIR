@@ -51,28 +51,26 @@ def model(y, t, beta, sigma, gamma, mu):
     dRdt = gamma * I - mu * R
     return [dSdt, dEdt, dIdt, dRdt]
 
-# Parâmetros do modelo SEIR com demografia
+# Parâmetros do modelo SEIR com demografia, Rio de Janeiro, 2019
 beta = 0.4091   # Taxa de contato (transmissão)
 sigma = 0.1818  # Taxa de exposição
 gamma = 0.1428  # Taxa de recuperação
-mu = 0.0025  # Taxa de nascimento/morte
+mu = 0.0025     # Taxa de nascimento/morte
 
-# Condições iniciais
+# Condições iniciais, Rio de Janeiro, 2019
 S0 = 0.99991    # Fração inicial de suscetíveis
-E0 = 0.001    # Fração inicial de expostos
-I0 = 0.00008     # Fração inicial de infectados
-R0 = 0.0     # Fração inicial de recuperados
+E0 = 0.001      # Fração inicial de expostos
+I0 = 0.00008    # Fração inicial de infectados
+R0 = 0.0        # Fração inicial de recuperados
 
-# Vetor de tempo
+# Vetor de tempo. Obs: Aumentar o espaço de tempo neste vetor é importante para visualização a longo prazo
 t = np.linspace(0, 200, 1000)
 
-# Resolvendo as equações diferenciais do modelo SEIR com demografia
+# Solução as equações diferenciais
 solution = odeint(model, [S0, E0, I0, R0], t, args=(beta, sigma, gamma, mu))
 
-# Extraindo resultados
 S, E, I, R = solution.T
 
-# Plotando os resultados
 plt.plot(t, S, label='Suscetíveis')
 plt.plot(t, E, label='Expostos')
 plt.plot(t, I, label='Infectados')
