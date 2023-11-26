@@ -1,4 +1,4 @@
-# Modelo-SEIR-
+# Modelo-SEIR
 ## Trabalho para A2, Álgebra Linear 
 
 Nesse trabalho foram analisadas as aplicações da Álgebra linear para o sistema epidemiológico SEIR (Suscetíveis, Expostos, Infectados, Recuperados).
